@@ -9,19 +9,16 @@
 #import <Cocoa/Cocoa.h>
 #import <InputMethodKit/InputMethodKit.h> // 添加包含
 
+// 每个输入法必须有唯一连接名称，注意：不能包含点和空格
 const NSString* kConnectionName = @"IMKSampleConnection";
 IMKServer*       server;
 
 int main(int argc, const char * argv[]) {
   @autoreleasepool{
-    NSString*       identifier;
-
-    //find the bundle identifier and then initialize the input method server
-    identifier = [[NSBundle mainBundle] bundleIdentifier];
-    server = [[IMKServer alloc] initWithName:(NSString*)kConnectionName bundleIdentifier:[[NSBundle mainBundle] bundleIdentifier]];
-    
-    //load the bundle explicitly because in this case the input method is a background only application
-//    [NSBundle loadNibNamed:@"MainMenu" owner:[NSApplication sharedApplication]];
+    // 获取bundle ID
+    NSString* bundleID = [[NSBundle mainBundle] bundleIdentifier];
+    server = [[IMKServer alloc] initWithName:(NSString*)kConnectionName
+                            bundleIdentifier:bundleID];
     
     //finally run everything
     [[NSApplication sharedApplication] run];

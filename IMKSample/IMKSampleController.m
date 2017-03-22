@@ -9,11 +9,10 @@
 #import "IMKSampleController.h"
 
 @implementation IMKSampleController
+// 该方法接收来自客户程序的按键输入，InputMethodKit会把按键事件转换成NSString发送给本方法。
+//返回YES表明输入法要处理，系统将不再把按键继续发送给应用程序；否则返回NO
 -(BOOL)inputText:(NSString*)string client:(id)sender
 {
-  //Return YES to indicate the the key input was received and dealt with.  Key processing will not continue in that case.  In
-  //other words the system will not deliver a key down event to the application.
-  //Returning NO means the original key down will be passed on to the client.
   NSLog(@"%@", string);
   return NO;
 }
