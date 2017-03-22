@@ -49,11 +49,11 @@ Copyright (C) 2007 Apple Inc. All Rights Reserved.
 */
 #import "NumberInputController.h"
 
-#if DEBUG
-#define NSLog(FORMAT, ...) fprintf(stderr,"[%s:%d]\t%s\n",[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String])
-#else
-#define NSLog(FORMAT, ...) nil
-#endif
+//#if DEBUG
+//#define NSLog(FORMAT, ...) fprintf(stderr,"[%s:%d]\t%s\n",[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String])
+//#else
+//#define NSLog(FORMAT, ...) nil
+//#endif
 
 @implementation NumberInputController
 
@@ -63,15 +63,15 @@ Here are the three approaches:
                  
 1.  Support keybinding.
     In this approach the system takes each keydown and trys to map the keydown to an action method that the input method has implemented.  If an action is found the system calls didCommandBySelector:client:.  If no action method is found inputText:client: is called.  An input method choosing this approach should implement
-          -(BOOL)inputText:(NSString*)string client:(id)sender;
-          -(BOOL)didCommandBySelector:(SEL)aSelector client:(id)sender;
+    -(BOOL)inputText:(NSString*)string client:(id)sender;
+    -(BOOL)didCommandBySelector:(SEL)aSelector client:(id)sender;
                         
 2. Receive all key events without the keybinding, but do "unpack" the relevant text data.
     Key events are broken down into the Unicodes, the key code that generated them, and modifier flags.  This data is then sent to the input method's inputText:key:modifiers:client: method.  For this approach implement:
-          -(BOOL)inputText:(NSString*)string key:(NSInteger)keyCode modifiers:(NSUInteger)flags client:(id)sender;
+    -(BOOL)inputText:(NSString*)string key:(NSInteger)keyCode modifiers:(NSUInteger)flags client:(id)sender;
                         
 3. Receive events directly from the Text Services Manager as NSEvent objects.  For this approach implement:
-          -(BOOL)handleEvent:(NSEvent*)event client:(id)sender;
+    -(BOOL)handleEvent:(NSEvent*)event client:(id)sender;
 */
 
 /*!

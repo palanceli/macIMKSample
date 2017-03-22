@@ -18,8 +18,16 @@
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>InputMethodConnectionName</key>
+	<string>IMKSampleConnection</string>
+	<key>InputMethodServerControllerClass</key>
+	<string>IMKSampleController</string>
+	<key>LSBackgroundOnly</key>
+	<true/>
 	<key>LSMinimumSystemVersion</key>
 	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
 	<key>NSHumanReadableCopyright</key>
@@ -28,17 +36,11 @@
 	<string>Main</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
-	<key>InputMethodConnectionName</key>
-	<string>IMKSampleConnection</string>
-	<key>InputMethodServerControllerClass</key>
-	<string>IMKSampleController</string>
-	<key>LSBackgroundOnly</key>
-	<true/>
 	<key>tsInputMethodCharacterRepertoireKey</key>
-	<array/>
+	<array>
+		<string>Latn</string>
+	</array>
 	<key>tsInputMethodIconFileKey</key>
 	<string>main.tif</string>
-	<key>CFBundleSignature</key>
-	<string>????</string>
 </dict>
 </plist>
