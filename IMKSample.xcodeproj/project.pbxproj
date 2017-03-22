@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F61A7AC01E8182C100EBF660 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F61A7ABF1E8182C100EBF660 /* AppDelegate.m */; };
 		F61A7AC31E8182C100EBF660 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F61A7AC21E8182C100EBF660 /* main.m */; };
-		F61A7AC61E8182C100EBF660 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F61A7AC51E8182C100EBF660 /* ViewController.m */; };
 		F61A7AC81E8182C100EBF660 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F61A7AC71E8182C100EBF660 /* Assets.xcassets */; };
 		F61A7ACB1E8182C100EBF660 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F61A7AC91E8182C100EBF660 /* Main.storyboard */; };
 		F61A7AD31E81860F00EBF660 /* main.tif in Resources */ = {isa = PBXBuildFile; fileRef = F61A7AD21E81860F00EBF660 /* main.tif */; };
@@ -19,11 +17,7 @@
 
 /* Begin PBXFileReference section */
 		F61A7ABB1E8182C100EBF660 /* IMKSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IMKSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F61A7ABE1E8182C100EBF660 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		F61A7ABF1E8182C100EBF660 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		F61A7AC21E8182C100EBF660 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		F61A7AC41E8182C100EBF660 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		F61A7AC51E8182C100EBF660 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		F61A7AC71E8182C100EBF660 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F61A7ACA1E8182C100EBF660 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F61A7ACC1E8182C100EBF660 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -65,27 +59,15 @@
 		F61A7ABD1E8182C100EBF660 /* IMKSample */ = {
 			isa = PBXGroup;
 			children = (
+				F61A7AC21E8182C100EBF660 /* main.m */,
+				F61A7AD71E818C5300EBF660 /* IMKSampleController.h */,
+				F61A7AD81E818C5300EBF660 /* IMKSampleController.m */,
 				F61A7AD21E81860F00EBF660 /* main.tif */,
-				F61A7ABE1E8182C100EBF660 /* AppDelegate.h */,
-				F61A7ABF1E8182C100EBF660 /* AppDelegate.m */,
-				F61A7AC41E8182C100EBF660 /* ViewController.h */,
-				F61A7AC51E8182C100EBF660 /* ViewController.m */,
 				F61A7AC71E8182C100EBF660 /* Assets.xcassets */,
 				F61A7AC91E8182C100EBF660 /* Main.storyboard */,
 				F61A7ACC1E8182C100EBF660 /* Info.plist */,
-				F61A7AC11E8182C100EBF660 /* Supporting Files */,
-				F61A7AD71E818C5300EBF660 /* IMKSampleController.h */,
-				F61A7AD81E818C5300EBF660 /* IMKSampleController.m */,
 			);
 			path = IMKSample;
-			sourceTree = "<group>";
-		};
-		F61A7AC11E8182C100EBF660 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				F61A7AC21E8182C100EBF660 /* main.m */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		F61A7AD41E818BF300EBF660 /* Frameworks */ = {
@@ -167,9 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F61A7AC61E8182C100EBF660 /* ViewController.m in Sources */,
 				F61A7AC31E8182C100EBF660 /* main.m in Sources */,
-				F61A7AC01E8182C100EBF660 /* AppDelegate.m in Sources */,
 				F61A7AD91E818C5300EBF660 /* IMKSampleController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
