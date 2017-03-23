@@ -29,6 +29,7 @@
 {
   [[self composedString] appendString:string];
   NSString *compString = [self composedString];
+  // 向光标处插入内嵌文字
   [sender setMarkedText:compString
          selectionRange:NSMakeRange(0, [compString length])
        replacementRange:NSMakeRange(NSNotFound, NSNotFound)];
@@ -36,7 +37,10 @@
 
 -(void) commitComposedString:(id)sender
 {
-  
+  // 向光标处插入上屏文字
+  [sender insertText:[self composedString]
+    replacementRange:NSMakeRange(NSNotFound, NSNotFound)];
+  [self setComposedString:@""];
 }
 
 // 该方法接收来自客户程序的按键输入，InputMethodKit会把按键事件转换成NSString发送给本方法。
@@ -44,26 +48,21 @@
 -(BOOL)inputText:(NSString*)string client:(id)sender
 {
   NSLog(@"inputText:%@", string);
-  if([string isEqualToString:@" "]){
-    [sender insertText:[self composedString]
-      replacementRange:NSMakeRange(NSNotFound, NSNotFound)];
-    [self setComposedString:@""];
-  }else{
-    [[self composedString] appendString:string];
+  if([string isEqualToString:@" "]){  // 如果是空格则上屏
+    [self commitComposedString:sender];
+  }else{                              // 否则追加到写作串
+    [self appendComposedString:string client:sender];
     NSLog(@"composed String:%@", [self composedString]);
   }
   return YES;
 }
 
-
 -(BOOL)didCommandBySelector:(SEL)aSelector client:(id)sender
 {
   // 如果输入法要处理该事件，则返回YES，否则返回NO
   NSLog(@"didCommandBySelector:%@", NSStringFromSelector(aSelector));
-  if(aSelector == @selector(insertNewline:)){
-    [sender insertText:[self composedString]
-      replacementRange:NSMakeRange(NSNotFound, NSNotFound)];
-    [self setComposedString:@""];
+  if(aSelector == @selector(insertNewline:)){ // 如果是回车则上屏
+    [self commitComposedString:sender];
     return YES;
   }
   return NO;
