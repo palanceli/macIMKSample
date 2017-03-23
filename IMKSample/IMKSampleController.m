@@ -43,6 +43,21 @@
   [self setComposedString:@""];
 }
 
+- (BOOL)inputText:(NSString*)string
+              key:(NSInteger)keyCode
+        modifiers:(NSUInteger)flags
+           client:(id)sender
+{
+  NSLog(@"inputText:%@ key:0x%2lX modifiers:0x%4lX",
+        string, (long)keyCode, (unsigned long)flags);
+  if(flags & NSShiftKeyMask){
+    NSLog(@"shift key is pressed.");
+  }else if(flags & NSControlKeyMask){
+    NSLog(@"ctrl key is pressed.");
+  }
+  return NO;
+}
+
 // 该方法接收来自客户程序的按键输入，InputMethodKit会把按键事件转换成NSString发送给本方法。
 //返回YES表明输入法要处理，系统将不再把按键继续发送给应用程序；否则返回NO
 -(BOOL)inputText:(NSString*)string client:(id)sender
