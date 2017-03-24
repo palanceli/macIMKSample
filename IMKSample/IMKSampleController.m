@@ -43,17 +43,33 @@
   [self setComposedString:@""];
 }
 
+- (BOOL)handleEvent:(NSEvent *)event client:(id)sender
+{
+  NSLog(@"handleEvent:client: keyCode=0x%02hX", [event keyCode]);
+  return NO;
+}
+
 - (BOOL)inputText:(NSString*)string
               key:(NSInteger)keyCode
         modifiers:(NSUInteger)flags
            client:(id)sender
 {
-  NSLog(@"inputText:%@ key:0x%2lX modifiers:0x%4lX",
+  NSLog(@"inputText:%@ key:0x%02lX modifiers:0x%04lX",
         string, (long)keyCode, (unsigned long)flags);
-  if(flags & NSShiftKeyMask){
-    NSLog(@"shift key is pressed.");
-  }else if(flags & NSControlKeyMask){
-    NSLog(@"ctrl key is pressed.");
+  
+  unichar key = [string characterAtIndex:0];
+  if((key >= 'a' && key <= 'z') || (key >= '0' && key <= '9'))
+  { // 如果是字符则追加到写作串
+    [self appendComposedString:string client:sender];
+    return YES;
+    
+  }
+  
+  if((keyCode == kVK_Space || keyCode == kVK_Return)
+     && [[self composedString] length]>0)
+  { // 如果是空格或回车且有写作串则上屏
+    [self commitComposedString:sender];
+    return YES;
   }
   return NO;
 }
@@ -63,9 +79,13 @@
 -(BOOL)inputText:(NSString*)string client:(id)sender
 {
   NSLog(@"inputText:%@", string);
-  if([string isEqualToString:@" "]){  // 如果是空格则上屏
-    [self commitComposedString:sender];
-  }else{                              // 否则追加到写作串
+  if([string isEqualToString:@" "]){
+    if([[self composedString] length] > 0){
+      [self commitComposedString:sender]; // 如果是空格且有写作串则上屏
+    }else{
+      return NO;
+    }
+  }else{                                  // 否则追加到写作串
     [self appendComposedString:string client:sender];
     NSLog(@"composed String:%@", [self composedString]);
   }
@@ -76,8 +96,10 @@
 {
   // 如果输入法要处理该事件，则返回YES，否则返回NO
   NSLog(@"didCommandBySelector:%@", NSStringFromSelector(aSelector));
-  if(aSelector == @selector(insertNewline:)){ // 如果是回车则上屏
-    [self commitComposedString:sender];
+  if(aSelector == @selector(insertNewline:) &&
+     [[self composedString] length] > 0)
+  {
+    [self commitComposedString:sender]; // 如果是回车则上屏
     return YES;
   }
   return NO;
