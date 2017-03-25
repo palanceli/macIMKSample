@@ -42,5 +42,58 @@
 	</array>
 	<key>tsInputMethodIconFileKey</key>
 	<string>main.tif</string>
+	<key>ComponentInputModeDictx</key>
+	<dict>
+		<key>tsInputModeListKey</key>
+		<dict>
+			<key>com.palanceli.inputmethod.IMKSampleModeA</key>
+			<dict>
+				<key>tsInputModeAlternateMenuIconFileKey</key>
+				<string>A.tif</string>
+				<key>tsInputModeDefaultStateKey</key>
+				<true/>
+				<key>tsInputModeIsVisibleKey</key>
+				<true/>
+				<key>tsInputModeKeyEquivalentKey</key>
+				<string>A</string>
+				<key>tsInputModeKeyEquivalentModifiersKey</key>
+				<integer>4608</integer>
+				<key>tsInputModeMenuIconFileKey</key>
+				<string>A.tif</string>
+				<key>tsInputModePaletteIconFileKey</key>
+				<string>A.tif</string>
+				<key>tsInputModePrimaryInScriptKey</key>
+				<true/>
+				<key>tsInputModeScriptKey</key>
+				<string>smUnicodeScript</string>
+			</dict>
+			<key>com.palanceli.inputmethod.IMKSampleModeB</key>
+			<dict>
+				<key>tsInputModeAlternateMenuIconFileKey</key>
+				<string>B.tif</string>
+				<key>tsInputModeDefaultStateKey</key>
+				<true/>
+				<key>tsInputModeIsVisibleKey</key>
+				<true/>
+				<key>tsInputModeKeyEquivalentKey</key>
+				<string>B</string>
+				<key>tsInputModeKeyEquivalentModifiersKey</key>
+				<integer>4608</integer>
+				<key>tsInputModeMenuIconFileKey</key>
+				<string>B.tif</string>
+				<key>tsInputModePaletteIconFileKey</key>
+				<string>B.tif</string>
+				<key>tsInputModePrimaryInScriptKey</key>
+				<true/>
+				<key>tsInputModeScriptKey</key>
+				<string>smUnicodeScript</string>
+			</dict>
+		</dict>
+		<key>tsVisibleInputModeOrderedArrayKey</key>
+		<array>
+			<string>com.palanceli.inputmethod.IMKSampleModeA</string>
+			<string>com.palanceli.inputmethod.IMKSampleModeB</string>
+		</array>
+	</dict>
 </dict>
 </plist>

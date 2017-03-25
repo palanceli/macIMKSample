@@ -11,7 +11,8 @@
 
 // 每个输入法必须有唯一连接名称，注意：不能包含点和空格
 const NSString* kConnectionName = @"IMKSampleConnection";
-IMKServer*       server;
+IMKServer*      server;
+IMKCandidates*  candidates = nil;
 
 int main(int argc, const char * argv[]) {
   @autoreleasepool{
@@ -19,6 +20,10 @@ int main(int argc, const char * argv[]) {
     NSString* bundleID = [[NSBundle mainBundle] bundleIdentifier];
     server = [[IMKServer alloc] initWithName:(NSString*)kConnectionName
                             bundleIdentifier:bundleID];
+    
+    candidates = [[IMKCandidates alloc]
+                  initWithServer:server
+                  panelType:kIMKSingleRowSteppingCandidatePanel];
     
     //finally run everything
     [[NSApplication sharedApplication] run];
