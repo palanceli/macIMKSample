@@ -7,24 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F60895F31E86B9DC000974EA /* IMKSCandidatesWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = F60895F21E86B9DC000974EA /* IMKSCandidatesWindow.m */; };
+		F60895F61E86BA6A000974EA /* IMKSCandidatesWindowMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = F60895F51E86BA6A000974EA /* IMKSCandidatesWindowMgr.m */; };
+		F60895F91E86BCEF000974EA /* SGDXIMEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = F60895F81E86BCEF000974EA /* SGDXIMEngine.m */; };
+		F60895FC1E86CF85000974EA /* IMKSCandidatesView.m in Sources */ = {isa = PBXBuildFile; fileRef = F60895FB1E86CF85000974EA /* IMKSCandidatesView.m */; };
 		F61A7AC31E8182C100EBF660 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F61A7AC21E8182C100EBF660 /* main.m */; };
 		F61A7AC81E8182C100EBF660 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F61A7AC71E8182C100EBF660 /* Assets.xcassets */; };
 		F61A7ACB1E8182C100EBF660 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F61A7AC91E8182C100EBF660 /* Main.storyboard */; };
 		F61A7AD31E81860F00EBF660 /* main.tif in Resources */ = {isa = PBXBuildFile; fileRef = F61A7AD21E81860F00EBF660 /* main.tif */; };
 		F61A7AD61E818BF300EBF660 /* InputMethodKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F61A7AD51E818BF300EBF660 /* InputMethodKit.framework */; };
 		F61A7AD91E818C5300EBF660 /* IMKSampleController.m in Sources */ = {isa = PBXBuildFile; fileRef = F61A7AD81E818C5300EBF660 /* IMKSampleController.m */; };
+		F6F33B371E86A4040009C71B /* A.tif in Resources */ = {isa = PBXBuildFile; fileRef = F6F33B361E86A4040009C71B /* A.tif */; };
+		F6F33B391E86A4100009C71B /* B.tif in Resources */ = {isa = PBXBuildFile; fileRef = F6F33B381E86A4100009C71B /* B.tif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F60895F11E86B9DC000974EA /* IMKSCandidatesWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMKSCandidatesWindow.h; sourceTree = "<group>"; };
+		F60895F21E86B9DC000974EA /* IMKSCandidatesWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMKSCandidatesWindow.m; sourceTree = "<group>"; };
+		F60895F41E86BA6A000974EA /* IMKSCandidatesWindowMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMKSCandidatesWindowMgr.h; sourceTree = "<group>"; };
+		F60895F51E86BA6A000974EA /* IMKSCandidatesWindowMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMKSCandidatesWindowMgr.m; sourceTree = "<group>"; };
+		F60895F71E86BCEF000974EA /* SGDXIMEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGDXIMEngine.h; sourceTree = "<group>"; };
+		F60895F81E86BCEF000974EA /* SGDXIMEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGDXIMEngine.m; sourceTree = "<group>"; };
+		F60895FA1E86CF85000974EA /* IMKSCandidatesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMKSCandidatesView.h; sourceTree = "<group>"; };
+		F60895FB1E86CF85000974EA /* IMKSCandidatesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMKSCandidatesView.m; sourceTree = "<group>"; };
 		F61A7ABB1E8182C100EBF660 /* IMKSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IMKSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F61A7AC21E8182C100EBF660 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F61A7AC71E8182C100EBF660 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F61A7ACA1E8182C100EBF660 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F61A7ACC1E8182C100EBF660 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F61A7AD21E81860F00EBF660 /* main.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = main.tif; sourceTree = "<group>"; };
+		F61A7AD21E81860F00EBF660 /* main.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = main.tif; path = IMKSample/main.tif; sourceTree = "<group>"; };
 		F61A7AD51E818BF300EBF660 /* InputMethodKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InputMethodKit.framework; path = System/Library/Frameworks/InputMethodKit.framework; sourceTree = SDKROOT; };
 		F61A7AD71E818C5300EBF660 /* IMKSampleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMKSampleController.h; sourceTree = "<group>"; };
 		F61A7AD81E818C5300EBF660 /* IMKSampleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMKSampleController.m; sourceTree = "<group>"; };
+		F6F33B361E86A4040009C71B /* A.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = A.tif; path = IMKSample/A.tif; sourceTree = "<group>"; };
+		F6F33B381E86A4100009C71B /* B.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = B.tif; path = IMKSample/B.tif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +60,7 @@
 			children = (
 				F61A7ABD1E8182C100EBF660 /* IMKSample */,
 				F61A7ABC1E8182C100EBF660 /* Products */,
+				F6F33B351E86A3EC0009C71B /* Resources */,
 				F61A7AD41E818BF300EBF660 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -62,10 +79,17 @@
 				F61A7AC21E8182C100EBF660 /* main.m */,
 				F61A7AD71E818C5300EBF660 /* IMKSampleController.h */,
 				F61A7AD81E818C5300EBF660 /* IMKSampleController.m */,
-				F61A7AD21E81860F00EBF660 /* main.tif */,
 				F61A7AC71E8182C100EBF660 /* Assets.xcassets */,
 				F61A7AC91E8182C100EBF660 /* Main.storyboard */,
 				F61A7ACC1E8182C100EBF660 /* Info.plist */,
+				F60895F11E86B9DC000974EA /* IMKSCandidatesWindow.h */,
+				F60895F21E86B9DC000974EA /* IMKSCandidatesWindow.m */,
+				F60895F41E86BA6A000974EA /* IMKSCandidatesWindowMgr.h */,
+				F60895F51E86BA6A000974EA /* IMKSCandidatesWindowMgr.m */,
+				F60895F71E86BCEF000974EA /* SGDXIMEngine.h */,
+				F60895F81E86BCEF000974EA /* SGDXIMEngine.m */,
+				F60895FA1E86CF85000974EA /* IMKSCandidatesView.h */,
+				F60895FB1E86CF85000974EA /* IMKSCandidatesView.m */,
 			);
 			path = IMKSample;
 			sourceTree = "<group>";
@@ -76,6 +100,16 @@
 				F61A7AD51E818BF300EBF660 /* InputMethodKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F6F33B351E86A3EC0009C71B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F6F33B381E86A4100009C71B /* B.tif */,
+				F6F33B361E86A4040009C71B /* A.tif */,
+				F61A7AD21E81860F00EBF660 /* main.tif */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,9 +170,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6F33B391E86A4100009C71B /* B.tif in Resources */,
 				F61A7AD31E81860F00EBF660 /* main.tif in Resources */,
 				F61A7AC81E8182C100EBF660 /* Assets.xcassets in Resources */,
 				F61A7ACB1E8182C100EBF660 /* Main.storyboard in Resources */,
+				F6F33B371E86A4040009C71B /* A.tif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,7 +185,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F60895F91E86BCEF000974EA /* SGDXIMEngine.m in Sources */,
+				F60895F31E86B9DC000974EA /* IMKSCandidatesWindow.m in Sources */,
 				F61A7AC31E8182C100EBF660 /* main.m in Sources */,
+				F60895F61E86BA6A000974EA /* IMKSCandidatesWindowMgr.m in Sources */,
+				F60895FC1E86CF85000974EA /* IMKSCandidatesView.m in Sources */,
 				F61A7AD91E818C5300EBF660 /* IMKSampleController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
