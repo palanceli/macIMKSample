@@ -15,19 +15,25 @@
 
 -(void) appendComposedString:(NSString*) string client:(id)sender
 {
-  NSString *compString = [[SGDXIMEngine sharedObject] appendComposeString:string];
+  SGDXIMEngine* imEngine = [SGDXIMEngine sharedObject];
+  IMKSCandidatesWindowMgr* candWinMgr = [IMKSCandidatesWindowMgr sharedObject];
+  NSString *compString = [imEngine appendComposeString:string];
   // 向光标处插入内嵌文字
   [sender setMarkedText:compString
          selectionRange:NSMakeRange(0, [compString length])
        replacementRange:NSMakeRange(NSNotFound, NSNotFound)];
+  [candWinMgr updateCandidateWindow:[self client]];
 }
 
 -(void) commitComposedString:(id)sender
 {
+  SGDXIMEngine* imEngine = [SGDXIMEngine sharedObject];
+  IMKSCandidatesWindowMgr* candWinMgr = [IMKSCandidatesWindowMgr sharedObject];
   // 向光标处插入上屏文字
   [sender insertText:[[SGDXIMEngine sharedObject] composeString] 
     replacementRange:NSMakeRange(NSNotFound, NSNotFound)];
-  [[SGDXIMEngine sharedObject] cleanComposeString];
+  [imEngine cleanComposeString];
+  [candWinMgr updateCandidateWindow:[self client]];
 }
 
 - (BOOL)handleEvent:(NSEvent *)event client:(id)sender
@@ -35,19 +41,16 @@
 //  NSLog(@"%@", event);
   if([event type] == NSKeyDown){
     unichar key = [[event characters] characterAtIndex:0];
-    // 如果是字符则追加到写作串
+    // 如果是字符则追加到写作串，并更新候选窗
     if((key >= 'a' && key <= 'z') ||(key >= '0' && key <= '9')){
       [self appendComposedString:[event characters] client:sender];
-      [[IMKSCandidatesWindowMgr sharedObject]updateCandidateWindow:[self client]];
-      
       return YES;
     }
-    // 如果是空格或回车且有写作串则上屏
+    // 如果是空格或回车且有写作串则上屏，并更新候选窗
     if(([event keyCode] == kVK_Space || [event keyCode] == kVK_Return)&&
       [[[SGDXIMEngine sharedObject] composeString] length] > 0)
     {
       [self commitComposedString:sender];
-      [[IMKSCandidatesWindowMgr sharedObject]updateCandidateWindow:[self client]];
       return YES;
     }
   }
