@@ -15,14 +15,9 @@
     
   // Drawing code here.
   NSLog(@"IMKSCandidatesView::drawRect");
-  NSPoint pt1 = NSMakePoint(0, 0);
-  NSPoint pt2 = NSMakePoint(500, 500);
-  NSColor* lineColor = [NSColor colorWithCalibratedRed:255
-                                                 green:255
-                                                  blue:0
-                                                 alpha:1.0f];
-  [lineColor set];
-  [NSBezierPath strokeLineFromPoint:pt1 toPoint:pt2];
+  NSRect bounds = [self bounds];
+  [[NSColor greenColor]set];
+  [NSBezierPath fillRect:bounds];
 }
 
 @end

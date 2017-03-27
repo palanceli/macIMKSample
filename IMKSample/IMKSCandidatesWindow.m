@@ -50,7 +50,8 @@
     display = NO;
   }
   
-  NSLog(@"IMKSCandidatesWindow::update display:%hhu", display);
+  NSLog(@"IMKSCandidatesWindow::update rect:(%.0f, %.0f, %.0f, %.0f), display:%hhu",
+        rect.origin.x, rect.origin.y, rect.size.width, rect.size.height, display);
   [self setFrame:rect display:display];
 }
 @end
