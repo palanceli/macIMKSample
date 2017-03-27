@@ -8,32 +8,43 @@
 
 #import "IMKSampleController.h"
 #import "SGDXIMEngine.h"
-#import "IMKSCandidatesWindowMgr.h"
+#import "IMKSCandidatesWindow.h"
 
-@implementation IMKSampleController{
+@implementation IMKSampleController
+{
+  IMKSCandidatesWindow* _candidatesWindow;
+}
+-(IMKSCandidatesWindow*) candidatesWindow
+{
+  if(_candidatesWindow == nil){
+    _candidatesWindow = [[IMKSCandidatesWindow alloc]
+               initWithContentRect:NSZeroRect
+               styleMask:NSBorderlessWindowMask
+               backing:NSBackingStoreBuffered
+               defer:YES];
+  }
+  return _candidatesWindow;
 }
 
 -(void) appendComposedString:(NSString*) string client:(id)sender
 {
   SGDXIMEngine* imEngine = [SGDXIMEngine sharedObject];
-  IMKSCandidatesWindowMgr* candWinMgr = [IMKSCandidatesWindowMgr sharedObject];
   NSString *compString = [imEngine appendComposeString:string];
   // 向光标处插入内嵌文字
   [sender setMarkedText:compString
          selectionRange:NSMakeRange(0, [compString length])
        replacementRange:NSMakeRange(NSNotFound, NSNotFound)];
-  [candWinMgr updateCandidateWindow:[self client]];
+  [[self candidatesWindow]update:[self client]]; // 更新候选窗
 }
 
 -(void) commitComposedString:(id)sender
 {
   SGDXIMEngine* imEngine = [SGDXIMEngine sharedObject];
-  IMKSCandidatesWindowMgr* candWinMgr = [IMKSCandidatesWindowMgr sharedObject];
   // 向光标处插入上屏文字
   [sender insertText:[[SGDXIMEngine sharedObject] composeString] 
     replacementRange:NSMakeRange(NSNotFound, NSNotFound)];
   [imEngine cleanComposeString];
-  [candWinMgr updateCandidateWindow:[self client]];
+  [[self candidatesWindow]update:[self client]];  // 更新候选窗
 }
 
 - (BOOL)handleEvent:(NSEvent *)event client:(id)sender
@@ -61,63 +72,4 @@
   return NSEventMaskFlagsChanged | NSEventMaskKeyDown | NSEventMaskKeyUp;
 }
 
-// - (BOOL)inputText:(NSString*)string
-//              key:(NSInteger)keyCode
-//        modifiers:(NSUInteger)flags
-//           client:(id)sender
-//{
-//  NSLog(@"inputText:%@ key:0x%02lX modifiers:0x%04lX",
-//        string, (long)keyCode, (unsigned long)flags);
-//
-//  unichar key = [string characterAtIndex:0];
-//  if((key >= 'a' && key <= 'z') || (key >= '0' && key <= '9'))
-//  { // 如果是字符则追加到写作串
-//    [self appendComposedString:string client:sender];
-//    return YES;
-//  }
-//
-//  if((keyCode == kVK_Space || keyCode == kVK_Return)
-//     && [[self composedString] length]>0)
-//  { // 如果是空格或回车且有写作串则上屏
-//    [self commitComposedString:sender];
-//    return YES;
-//  }
-//  return NO;
-//}
-
-// 该方法接收来自客户程序的按键输入，InputMethodKit会把按键事件转换成NSString发送给本方法。
-//返回YES表明输入法要处理，系统将不再把按键继续发送给应用程序；否则返回NO
--(BOOL)inputText:(NSString*)string client:(id)sender
-{
-  NSLog(@"inputText:%@", string);
-  if([string isEqualToString:@" "]){
-    if([[[SGDXIMEngine sharedObject] composeString] length] > 0){
-      [self commitComposedString:sender]; // 如果是空格且有写作串则上屏
-    }else{
-      return NO;
-    }
-  }else{                                  // 否则追加到写作串
-    [self appendComposedString:string client:sender];
-    NSLog(@"composed String:%@", [[SGDXIMEngine sharedObject] composeString]);
-  }
-  return YES;
-}
-
--(BOOL)didCommandBySelector:(SEL)aSelector client:(id)sender
-{
-  // 如果输入法要处理该事件，则返回YES，否则返回NO
-  NSLog(@"didCommandBySelector:%@", NSStringFromSelector(aSelector));
-  if(aSelector == @selector(insertNewline:) &&
-     [[[SGDXIMEngine sharedObject] composeString] length] > 0)
-  {
-    [self commitComposedString:sender]; // 如果是回车则上屏
-    return YES;
-  }
-  return NO;
-}
-
--(void)setValue:(id)value forTag:(long)tag client:(id)sender
-{
-  NSLog(@"value:%@ forTag:%ld", value, tag);
-}
 @end

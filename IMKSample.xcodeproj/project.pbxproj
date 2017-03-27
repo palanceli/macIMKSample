@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		F60895F31E86B9DC000974EA /* IMKSCandidatesWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = F60895F21E86B9DC000974EA /* IMKSCandidatesWindow.m */; };
-		F60895F61E86BA6A000974EA /* IMKSCandidatesWindowMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = F60895F51E86BA6A000974EA /* IMKSCandidatesWindowMgr.m */; };
 		F60895F91E86BCEF000974EA /* SGDXIMEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = F60895F81E86BCEF000974EA /* SGDXIMEngine.m */; };
 		F60895FC1E86CF85000974EA /* IMKSCandidatesView.m in Sources */ = {isa = PBXBuildFile; fileRef = F60895FB1E86CF85000974EA /* IMKSCandidatesView.m */; };
 		F61A7AC31E8182C100EBF660 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F61A7AC21E8182C100EBF660 /* main.m */; };
@@ -24,8 +23,6 @@
 /* Begin PBXFileReference section */
 		F60895F11E86B9DC000974EA /* IMKSCandidatesWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMKSCandidatesWindow.h; sourceTree = "<group>"; };
 		F60895F21E86B9DC000974EA /* IMKSCandidatesWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMKSCandidatesWindow.m; sourceTree = "<group>"; };
-		F60895F41E86BA6A000974EA /* IMKSCandidatesWindowMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMKSCandidatesWindowMgr.h; sourceTree = "<group>"; };
-		F60895F51E86BA6A000974EA /* IMKSCandidatesWindowMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMKSCandidatesWindowMgr.m; sourceTree = "<group>"; };
 		F60895F71E86BCEF000974EA /* SGDXIMEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGDXIMEngine.h; sourceTree = "<group>"; };
 		F60895F81E86BCEF000974EA /* SGDXIMEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGDXIMEngine.m; sourceTree = "<group>"; };
 		F60895FA1E86CF85000974EA /* IMKSCandidatesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMKSCandidatesView.h; sourceTree = "<group>"; };
@@ -84,8 +81,6 @@
 				F61A7ACC1E8182C100EBF660 /* Info.plist */,
 				F60895F11E86B9DC000974EA /* IMKSCandidatesWindow.h */,
 				F60895F21E86B9DC000974EA /* IMKSCandidatesWindow.m */,
-				F60895F41E86BA6A000974EA /* IMKSCandidatesWindowMgr.h */,
-				F60895F51E86BA6A000974EA /* IMKSCandidatesWindowMgr.m */,
 				F60895F71E86BCEF000974EA /* SGDXIMEngine.h */,
 				F60895F81E86BCEF000974EA /* SGDXIMEngine.m */,
 				F60895FA1E86CF85000974EA /* IMKSCandidatesView.h */,
@@ -188,7 +183,6 @@
 				F60895F91E86BCEF000974EA /* SGDXIMEngine.m in Sources */,
 				F60895F31E86B9DC000974EA /* IMKSCandidatesWindow.m in Sources */,
 				F61A7AC31E8182C100EBF660 /* main.m in Sources */,
-				F60895F61E86BA6A000974EA /* IMKSCandidatesWindowMgr.m in Sources */,
 				F60895FC1E86CF85000974EA /* IMKSCandidatesView.m in Sources */,
 				F61A7AD91E818C5300EBF660 /* IMKSampleController.m in Sources */,
 			);

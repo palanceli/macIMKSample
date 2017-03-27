@@ -10,8 +10,8 @@
 
 @interface SGDXIMEngine : NSObject
 +(SGDXIMEngine*) sharedObject;
--(NSMutableString*) appendComposeString:(NSString*)string;
--(NSMutableString*) composeString;
--(NSArray*) candidates;
--(void) cleanComposeString;
+
+-(NSMutableString*) appendComposeString:(NSString*)string;  // 向写作串追加字符
+-(void) cleanComposeString;         // 清除写作串
+-(NSMutableString*) composeString;  // 获得写作串
 @end

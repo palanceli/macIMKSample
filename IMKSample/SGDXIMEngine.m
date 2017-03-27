@@ -48,13 +48,4 @@
   [[self composeString] setString:@""];
 }
 
--(NSArray*)candidates
-{
-  if([[self composeString] length] > 0){
-    NSMutableArray* candidates = [[NSMutableArray alloc] init];
-    [candidates addObject:[self composeString]];
-    return candidates;
-  }
-  return nil;
-}
 @end
